@@ -42,22 +42,27 @@ const Register = () => {
             <div className={style.registerContainer}>
                 <form onSubmit={handleSubmit} className={style.registerForm}>
                     <div className={style.caixaInput}>
-                        <input className={style.registerInput} type="email" placeholder='Email' name='email' autoComplete="username" onChange={handleChanges}/>
+                        <label className={style.label}>Email</label>
+                        <input required className={style.registerInput} type="email" placeholder='email@gmail.com' name='email' autoComplete="username" onChange={handleChanges}/>
                     </div>
                     <div className={style.caixaInput}>
-                        <input className={style.registerInput} type={showPassword ? "text" : "password"} placeholder='Senha' name='password' autoComplete="new-password" onChange={handleChanges}/>
-                        <button className={style.btnEye} type="button" onClick={togglePasswordVisibility}>
-                            {showPassword ? <RxEyeOpen /> : <LuEyeClosed /> }
-                        </button>
+                        <label className={style.label}>Senha</label>
+                        <div className={style.containerInput}>
+                            <input required className={style.registerInput} type={showPassword ? "text" : "password"} placeholder='Senha123@' name='password' autoComplete="new-password" onChange={handleChanges}/>
+                            <button className={style.btnEye} type="button" onClick={togglePasswordVisibility}>
+                                {showPassword ? <RxEyeOpen /> : <LuEyeClosed /> }
+                            </button>
+                        </div>
                     </div>
                     <div className={style.caixaInput}>
-                        <input className={style.registerInput} type="text" placeholder='Nome de usuário' name='username' onChange={handleChanges}/>
+                        <label className={style.label}>Nome de Usuário</label>
+                        <input required className={style.registerInput} type="text" placeholder='Felipe Maia' name='username' onChange={handleChanges}/>
                     </div>
                     <button className={style.btnCad}>Cadastrar</button>
                 </form>
                 <div className={style.registerLogin}>
                     <p>Já tem conta?</p>
-                    <Link to='/Login'>Login</Link>
+                    <Link to='/Login' className={style.link}>Login</Link>
                 </div>
             </div>
         </div>

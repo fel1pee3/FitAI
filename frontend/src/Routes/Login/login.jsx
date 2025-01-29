@@ -42,19 +42,23 @@ const Login = () => {
             <div className={style.loginContainer}>
                 <form onSubmit={handleSubmit} className={style.loginForm}>
                     <div className={style.caixaInput}>
-                        <input className={style.loginInput} type="email" placeholder='Email'  name='email' autoComplete="username" onChange={handleChanges}/>
+                        <label className={style.label}>Email</label>
+                        <input required className={style.loginInput} type="email" placeholder='Email' name='email' autoComplete="username" onChange={handleChanges}/>
                     </div>
                     <div className={style.caixaInput}>
-                        <input className={style.loginInput} type={showPassword ? "text" : "password"} placeholder='Senha' name='password' autoComplete="new-password" onChange={handleChanges}/>
-                        <button className={style.btnEye} type="button" onClick={togglePasswordVisibility}>
-                            {showPassword ? <RxEyeOpen /> : <LuEyeClosed /> }
-                        </button>
+                        <label className={style.label}>Senha</label>
+                        <div className={style.containerInput}>
+                            <input required className={style.loginInput} type={showPassword ? "text" : "password"} placeholder='Senha' name='password' autoComplete="new-password" onChange={handleChanges}/>
+                            <button className={style.btnEye} type="button" onClick={togglePasswordVisibility}>
+                                {showPassword ? <RxEyeOpen /> : <LuEyeClosed /> }
+                            </button>
+                        </div>
                     </div>
                     <button className={style.btnCad}>Login</button>
                     </form>
                 <div className={style.loginRegister}>
                     <p>Não tem conta?</p>
-                    <Link to='/Register'>Register</Link>
+                    <Link to='/Register' className={style.link}>Register</Link>
                 </div>
             </div>
         </div>

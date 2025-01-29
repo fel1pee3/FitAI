@@ -1,0 +1,108 @@
+.register{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../../../images/background-altent.jpg');
+    background-size: cover;
+    background-position: center center;
+}
+
+.registerContainer{
+    background-color: #ffffff6e;
+    box-shadow: 1px 1px 10px 3px #00000021;
+    backdrop-filter: blur(5px);
+    display: flex;
+    padding: 30px;
+    border-radius: 10px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.registerForm{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+}
+
+.caixaInput{
+    display: flex;
+    flex-direction: column;
+}
+
+.containerInput{
+    position: relative;
+}
+
+.btnEye{
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    background-color: transparent;
+}
+
+/* From Uiverse.io by alexruix */ 
+.registerInput {
+    width: 350px;
+    height: 44px;
+    background-color: #05060f0a;
+    border-radius: .5rem;
+    padding: 0 1rem;
+    border: 2px solid transparent;
+    font-size: 1rem;
+    transition: border-color .3s cubic-bezier(.25,.01,.25,1) 0s, color .3s cubic-bezier(.25,.01,.25,1) 0s,background .2s cubic-bezier(.25,.01,.25,1) 0s;
+}
+
+.label {
+    display: block;
+    margin-bottom: 5px;
+    margin-left: 1px;
+    font-size: .9em;
+    font-weight: bold;
+    color: #05060f99;
+    transition: color .3s cubic-bezier(.25,.01,.25,1) 0s;
+}
+
+.registerInput:hover, .registerInput:focus, .caixaInput:hover .registerInput {
+    outline: none;
+    border-color: #05060f71;
+}
+
+.caixaInput:hover .label, .input:focus {
+    color: #05060fc2;
+}
+
+.btnCad{
+    margin: 10px 0;
+    padding: 10px 0;
+    background-color: var(--black01);
+    border-radius: 10px;
+    color: var(--white01);
+    font-size: 1rem;
+    transition: background-color .3s cubic-bezier(.25,.01,.25,1) 0s;
+    box-shadow: 1px 1px 10px 3px #00000021;
+}
+
+.btnCad:hover{
+    opacity: 85%;
+}
+
+.registerLogin{
+    display: flex;
+    gap: 3px;
+}
+
+.link{
+    color: var(--color01);
+}
+
+@media (max-width: 750px){
+    
+    .registerInput {
+        width: 280px;
+        height: 44px;
+    }
+    
+}

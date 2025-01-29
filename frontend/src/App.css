@@ -5,7 +5,7 @@
     --color04: #F28705;
     --color05: #F2421B;
     --black01: #000000;
-    --white02: #FFFFFF;
+    --white01: #FFFFFF;
 
     --font-destaque: "Lato", serif;
     --font-titulo: "Poppins", serif;
@@ -17,4 +17,20 @@
     padding: 0;
     box-sizing: border-box;
     font-family: var(--font-global);
+    transition: all ease .4s;
+}
+
+a{
+    text-decoration: none;
+}
+
+input{
+    outline: none;
+    border: none;
+}
+
+button{
+    outline: none;
+    border: none;
+    cursor: pointer;
 }
