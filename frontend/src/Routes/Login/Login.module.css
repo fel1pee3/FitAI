@@ -65,7 +65,7 @@
     transition: color .3s cubic-bezier(.25,.01,.25,1) 0s;
 }
 
-.registerInput:hover, .registerInput:focus, .caixaInput:hover .registerInput {
+.loginInput:hover, .loginInput:focus, .caixaInput:hover .loginInput {
     outline: none;
     border-color: #05060f71;
 }

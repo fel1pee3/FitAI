@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
+import img from "../../../images/ilustracao-home.png"
 import style from './Home.module.css'
 
 const Home = () => {
@@ -34,7 +35,14 @@ const Home = () => {
 
   return (
     <div className={style.home}>    
-        <h1>Welcome {userName}</h1>
+        <div className={style.homeContainer}>
+            <img src={img} className={style.imgIlustration} alt="imagem de ilustração" />
+            <div className={style.homeContent}>
+                <h2>Bem Vindo {userName}</h2>
+                <h1>"Cada pequena mudança nos hábitos é um grande passo rumo ao seu objetivo."</h1>
+                <Link to='/PerguntasUser' className={style.btnGo}>Começar agora</Link>
+            </div>
+        </div>
     </div>
   )
 }
