@@ -5,6 +5,7 @@ import Register from './Routes/Register/Register'
 import Login from './Routes/Login/login'
 import Home from './Routes/Home/Home'
 import PerguntasUser from './Routes/PerguntasUser/PerguntasUser';
+import HomeStart from './Routes/HomeStart/HomeStart';
 import "./App.css"
 
 const App = () => {
@@ -15,6 +16,7 @@ const App = () => {
         <Route path='/register' element={<Register />}></Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/perguntasUser' element={<PerguntasUser />}></Route>
+        <Route path='/homeStart' element={<HomeStart />}></Route>
       </Routes>
     </BrowserRouter>
   )
