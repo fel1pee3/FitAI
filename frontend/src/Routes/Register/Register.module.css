@@ -4,7 +4,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url('../../../images/background-altent.jpg');
+    background-image: url('../../../images/background-altent.png');
     background-size: cover;
     background-position: center center;
 }

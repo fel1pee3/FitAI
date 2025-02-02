@@ -1,7 +1,7 @@
 :root{
     --color01: #012840;
     --color02: #C1D9D4;
-    --color03: #F2A30F;
+    --color03: #e9a21e;
     --color04: #F28705;
     --color05: #F2421B;
     --black01: #000000;
@@ -10,6 +10,7 @@
     --font-destaque: "Lato", serif;
     --font-titulo: "Poppins", serif;
     --font-global: "Roboto", serif;
+    
 }
 
 *{

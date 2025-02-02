@@ -1,0 +1,11 @@
+.logo{
+    width: 70px;
+    height: 70px;
+    margin: 0 auto;
+    display: block;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    border-radius: 50%;
+    box-shadow: 3px 3px 10px 3px #00000063;
+}

@@ -1,47 +1,129 @@
 .home{
     width: 100%;
     height: 100vh;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: var(--color02);
-    padding: 100px;
+    background: linear-gradient(90deg, rgba(0,0,0,0.3029586834733894) 0%, rgba(0,0,0,0.20211834733893552) 20%, rgba(0,0,0,0.10407913165266103) 35%, rgba(255,255,255,0) 50%, rgba(128,128,128,0.10407913165266103) 65%, rgba(0,0,0,0.19931722689075626) 80%, rgba(0,0,0,0.3029586834733894) 100%), 
+                url('../../../images/background-home.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 
 .homeContainer{
     display: flex;
-}
-
-.imgIlustration{
     width: 50%;
-}
-
-.homeContent{
-    width: 50%;
-    display: flex;
+    text-align: center;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.homeContent h1, .homeContent h2{
-    text-align: center;
-    font-family: var(--font-destaque);
+/* From Uiverse.io by thisSasha */ 
+.btnGo {
+    padding: 15px 25px;
+    border: 0;
+    border-radius: 15px;
+    color: #212121;
+    z-index: 1;
+    background: #e8e8e8;
+    position: relative;
+    font-weight: 1000;
+    font-size: 17px;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+    transition: all 250ms;
+    overflow: hidden;
 }
 
-.btnGo{
-    width: 200px;
-    height: 50px;
-    background-color: var(--color01);
-    color: var(--white01);
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.2rem;
-}
-
-.btnGo:hover{
+.btnGo::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 0;
+    width: 0;
+    border-radius: 15px;
     background-color: var(--color03);
-    transform: scale(1.05);
+    z-index: -1;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+    transition: all 250ms;
+}
+
+.btnGo:hover {
+    color: #e8e8e8;
+}
+
+.btnGo:hover::before {
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 100%;
+}
+
+.btnGo:active {
+    transform: scale(80%);
+}
+
+@media (max-width: 750px) {
+    
+    .homeContainer{
+        display: flex;
+        width: 90%;
+        text-align: center;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    /* From Uiverse.io by thisSasha */ 
+    .btnGo {
+        padding: 15px 25px;
+        border: 0;
+        border-radius: 15px;
+        color: #212121;
+        z-index: 1;
+        background: #e8e8e8;
+        position: relative;
+        font-weight: 1000;
+        font-size: 17px;
+        -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+        box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+        transition: all 250ms;
+        overflow: hidden;
+    }
+    
+    .btnGo::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 0;
+        width: 0;
+        border-radius: 15px;
+        background-color: var(--color03);
+        z-index: -1;
+        -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+        box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+        transition: all 250ms;
+    }
+    
+    .btnGo:hover {
+        color: #e8e8e8;
+    }
+    
+    .btnGo:hover::before {
+        width: 100%;
+        top: 0;
+        left: 0;
+        height: 100%;
+    }
+    
+    .btnGo:active {
+        transform: scale(80%);
+    }
+
 }
