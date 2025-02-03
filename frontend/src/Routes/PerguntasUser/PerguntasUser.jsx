@@ -1,7 +1,8 @@
 import React, {useState} from 'react'
-import { useNavigate } from 'react-router-dom'
+import {Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import style from './PerguntasUser.module.css'
+import { FaArrowLeft } from "react-icons/fa6";
 
 const PerguntasUser = () => {
 
@@ -58,10 +59,18 @@ const PerguntasUser = () => {
 
   return (
     <div className={style.perguntas}>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="objetivo">Objetivo</label>
-          <select name="objetivo" onChange={handleChanges}>
+      <div className={style.caixaBtnBack}>
+      <Link to="/" className={style.cssButtonsIoButton}>
+        <div className={style.icon}>
+          <FaArrowLeft className={style.arrow} />
+        </div>
+        Back
+      </Link>
+      </div>
+      <form onSubmit={handleSubmit} className={style.form}>
+        <div className={style.caixaInput}>
+          <label className={style.label} htmlFor="objetivo">Objetivo</label>
+          <select className={style.select} name="objetivo" onChange={handleChanges}>
             <option value="" disabled>Selecione...</option>
             <option value="Emagrecer">Emagrecer</option>
             <option value="Ganhar massa muscular">Ganhar massa muscular</option>
@@ -70,58 +79,61 @@ const PerguntasUser = () => {
           </select>
         </div>
 
-        <div>
-          <label htmlFor="genero">Gênero</label>
-          <select name="genero" onChange={handleChanges}>
+        <div className={style.caixaInput}>
+          <label className={style.label} htmlFor="genero">Gênero</label>
+          <select className={style.select} name="genero" onChange={handleChanges}>
             <option value="" disabled>Selecione...</option>
             <option value="Masculino">Masculino</option>
             <option value="Feminino">Feminino</option>
           </select>
         </div>
 
-        <div>
-          <label htmlFor="idade">Idade</label>
+        
+        <div className={style.caixaInput}>
+          <label className={style.label} htmlFor="idade">Idade</label>
           <input
             type="number"
-            placeholder="18"
+            placeholder="idade"
             name="idade"
             onChange={handleChanges}
+            className={style.inputNumber}
           />
         </div>
-
-        <div>
-          <label htmlFor="altura">Altura</label>
+        <div className={style.caixaInput}>
+          <label className={style.label} htmlFor="altura">Altura</label>
           <input
             type="number"
-            placeholder="190"
+            placeholder="Em cm"
             name="altura"
             onChange={handleChanges}
+            className={style.inputNumber}
           />
         </div>
-
-        <div>
-          <label htmlFor="peso_atual">Peso Atual</label>
+        <div className={style.caixaInput}>
+          <label className={style.label} htmlFor="peso_atual">Peso Atual</label>
           <input
             type="number"
-            placeholder="80"
+            placeholder="Em kg"
             name="peso_atual"
             onChange={handleChanges}
+            className={style.inputNumber}
           />
         </div>
-
-        <div>
-          <label htmlFor="peso_ideal">Peso Ideal</label>
+        <div className={style.caixaInput}>
+          <label className={style.label} htmlFor="peso_ideal">Peso Ideal</label>
           <input
             type="number"
-            placeholder="75"
+            placeholder="Em kg"
             name="peso_ideal"
             onChange={handleChanges}
+            className={style.inputNumber}
           />
         </div>
+        
 
-        <div>
-          <label htmlFor="nivel_atividade">Nível de Atividade</label>
-          <select name="nivel_atividade" onChange={handleChanges}>
+        <div className={style.caixaInput}>
+          <label className={style.label} htmlFor="nivel_atividade">Nível de Atividade</label>
+          <select className={style.select} name="nivel_atividade" onChange={handleChanges}>
             <option value="" disabled>Selecione...</option>
             <option value="Sedentário">Sedentário</option>
             <option value="Leve">Leve</option>
@@ -131,36 +143,39 @@ const PerguntasUser = () => {
           </select>
         </div>
 
-        <div>
-          <label htmlFor="tipo_atividade">Tipo de Atividade</label>
+        <div className={style.caixaInput}>
+          <label className={style.label} htmlFor="tipo_atividade">Tipo de Atividade</label>
           <textarea
             placeholder="Aeróbica, Musculação, Atividades mistas, ..."
             name="tipo_atividade"
             onChange={handleChanges}
+            className={style.textArea}
           />
         </div>
 
-        <div>
-          <label htmlFor="horario_acordar">Horário de Acordar</label>
+        <div className={style.caixaInput}>
+          <label className={style.label} htmlFor="horario_acordar">Horário de Acordar</label>
           <input
             type="time"
             name="horario_acordar"
             onChange={handleChanges}
+            className={style.inputHora}
           />
         </div>
-
-        <div>
-          <label htmlFor="horario_dormir">Horário de Dormir</label>
+        <div className={style.caixaInput}>
+          <label className={style.label} htmlFor="horario_dormir">Horário de Dormir</label>
           <input
             type="time"
             name="horario_dormir"
             onChange={handleChanges}
+            className={style.inputHora}
           />
         </div>
+      
 
-        <div>
-          <label htmlFor="rotina">Rotina</label>
-          <select name="rotina" onChange={handleChanges}>
+        <div className={style.caixaInput}>
+          <label className={style.label} htmlFor="rotina">Rotina</label>
+          <select className={style.select} name="rotina" onChange={handleChanges}>
             <option value="" disabled>Selecione...</option>
             <option value="Pouco movimentada">Pouco movimentada</option>
             <option value="Moderadamente ativa">Moderadamente ativa</option>
@@ -168,36 +183,39 @@ const PerguntasUser = () => {
           </select>
         </div>
 
-        <div>
-          <label htmlFor="dieta_especifica">Dieta Específica</label>
+        <div className={style.caixaInput}>
+          <label className={style.label} htmlFor="dieta_especifica">Dieta Específica</label>
           <textarea
             placeholder="Dietas para emagrecer, Dietas para diabéticos, ..."
             name="dieta_especifica"
             onChange={handleChanges}
+            className={style.textArea}
           />
         </div>
 
-        <div>
-          <label htmlFor="alimentos_restritos">Alimentos Restritos</label>
+        <div className={style.caixaInput}>
+          <label className={style.label} htmlFor="alimentos_restritos">Alimentos Restritos</label>
           <textarea
             placeholder="glúten, lactose, açúcar, ..."
             name="alimentos_restritos"
             onChange={handleChanges}
+            className={style.textArea}
           />
         </div>
 
-        <div>
-          <label htmlFor="alimentos_preferidos">Alimentos Preferidos</label>
+        <div className={style.caixaInput}>
+          <label className={style.label} htmlFor="alimentos_preferidos">Alimentos Preferidos</label>
           <textarea
             placeholder="Doce, Salgado, Frutas, Carnes, ..."
             name="alimentos_preferidos"
             onChange={handleChanges}
+            className={style.textArea}
           />
         </div>
 
-        <div>
-          <label htmlFor="prefere_refeicoes">Prefere Refeições</label>
-          <select name="prefere_refeicoes" onChange={handleChanges}>
+        <div className={style.caixaInput}>
+          <label className={style.label} htmlFor="prefere_refeicoes">Prefere Refeições</label>
+          <select className={style.select} name="prefere_refeicoes" onChange={handleChanges}>
             <option value="" disabled>Selecione...</option>
             <option value="Simples e rápidas">Simples e rápidas</option>
             <option value="Elaboradas">Elaboradas</option>
@@ -205,37 +223,40 @@ const PerguntasUser = () => {
           </select>
         </div>
 
-        <div>
-          <label htmlFor="problema_saude">Problema de Saúde</label>
+        <div className={style.caixaInput}>
+          <label className={style.label} htmlFor="problema_saude">Problema de Saúde</label>
           <textarea
             placeholder="Diabétes, Hipertensão, falta de vitaminas, ..."
             name="problema_saude"
             onChange={handleChanges}
+            className={style.textArea}
           />
         </div>
 
-        <div>
-          <label htmlFor="suplementos">Suplementos</label>
+        <div className={style.caixaInput}>
+          <label className={style.label} htmlFor="suplementos">Suplementos</label>
           <textarea
             placeholder="Whey Protein, BCAA, Creatina, ..."
             name="suplementos"
             onChange={handleChanges}
+            className={style.textArea}
           />
         </div>
 
-        <div>
-          <label htmlFor="numero_refeicoes">Número de Refeições</label>
+        <div className={style.caixaInput}>
+          <label className={style.label} htmlFor="numero_refeicoes">Número de Refeições</label>
           <input
             type="number"
-            placeholder="Número de refeições diárias"
+            placeholder="Refeições diárias"
             name="numero_refeicoes"
             onChange={handleChanges}
+            className={style.inputNumber}
           />
         </div>
 
-        <div>
-          <label htmlFor="tipo_desafio">Tipo de Desafio</label>
-          <select name="tipo_desafio" onChange={handleChanges}>
+        <div className={style.caixaInput}>
+          <label className={style.label} htmlFor="tipo_desafio">Tipo de Desafio</label>
+          <select className={style.select} name="tipo_desafio" onChange={handleChanges}>
             <option value="" disabled>Selecione...</option>
             <option value="Falta de tempo">Falta de tempo</option>
             <option value="Não saber o que comer">Não saber o que comer</option>
@@ -244,9 +265,9 @@ const PerguntasUser = () => {
           </select>
         </div>
 
-        <div>
-          <label htmlFor="tempo_meta">Tempo para Meta</label>
-          <select name="tempo_meta" onChange={handleChanges}>
+        <div className={style.caixaInput}>
+          <label className={style.label} htmlFor="tempo_meta">Tempo para Meta</label>
+          <select className={style.select} name="tempo_meta" onChange={handleChanges}>
             <option value="" disabled>Selecione...</option>
             <option value="1 mês">1 mês</option>
             <option value="3 meses">3 meses</option>
@@ -255,7 +276,10 @@ const PerguntasUser = () => {
           </select>
         </div>
 
-        <button type="submit">Registrar Resposta</button>
+
+        <div className={style.caixaBtnPerguntas}>
+          <button type="submit" className={style.btnGo}>Salvar</button>
+        </div>
 
       </form>
 

@@ -1,0 +1,189 @@
+.perguntas{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background:  url('../../../images/background-form.jpg');    
+    background-size: cover;
+}
+
+.caixaBtnBack{
+    width: 100%;
+    padding: 20px 0 0 20px;
+}
+
+/* From Uiverse.io by adamgiebl */ 
+.cssButtonsIoButton {
+    width: max-content;
+    background: var(--color03);
+    color: white;
+    font-family: inherit;
+    padding: 0.35em;
+    padding-right: 1.2em; /* Ajustado */
+    font-size: 17px;
+    font-weight: 500;
+    border-radius: 0.9em;
+    border: none;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse; /* Inverte a posição do ícone */
+    box-shadow: inset 0 0 1.6em -0.6em var(--color03);
+    overflow: hidden;
+    position: relative;
+    height: 2.8em;
+    padding-left: 3.3em; /* Ajustado */
+    cursor: pointer;
+}
+
+.cssButtonsIoButton .icon {
+    background: white;
+    margin-right: 1em; /* Alterado de left para right */
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.2em;
+    width: 2.2em;
+    border-radius: 0.7em;
+    box-shadow: 0.1em 0.1em 0.6em 0.2em var(--color03);
+    left: 0.3em; /* Alterado de right para left */
+    transition: all 0.3s;
+}
+
+.cssButtonsIoButton:hover .icon {
+    width: calc(100% - 0.6em);
+}
+
+.arrow {
+    width: 1.1em;
+    transition: transform 0.3s;
+    color: var(--color03);
+}
+
+.cssButtonsIoButton:hover .icon svg {
+    transform: translateX(-0.1em); /* Ajustado para mover para a esquerda */
+}
+
+.cssButtonsIoButton:active .icon {
+    transform: scale(0.95);
+}
+
+.form{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px 0 50px 0;
+    background-color: #e9a21eea;
+    backdrop-filter: blur(3px);
+    padding: 30px;
+    border-radius: 10px;
+    margin: 20px 0 40px 0;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+}
+
+.caixaInput{
+    display: flex;
+    gap: 20px;
+}
+
+.label{
+    font-weight: 500;
+    width: 120px;
+}
+
+.select{
+    width: calc(100% - 120px);border-radius: 10px;
+    padding: 10px;
+    appearance: none;
+    background: white url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16"><path fill="black" d="M7 10l5 5 5-5z"/></svg>') no-repeat right 10px center;
+    background-size: 16px;  
+    outline: none;
+}
+
+.inputNumber{
+    border: 1px solid var(--black01);
+    border-radius: 10px;
+    padding: 10px;
+    width: 25%;
+    outline: none;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.inputHora{
+    border: 1px solid var(--black01);
+    border-radius: 10px;
+    padding: 0 10px;
+    width: 25%;
+    outline: none;
+}
+
+/* From Uiverse.io by Galahhad */ 
+.textArea {
+    width: calc(100% - 120px);
+    height: 60px;
+    border-radius: 10px;
+    padding: 10px;
+    resize: none;
+    outline: none;
+}
+
+.caixaBtnPerguntas{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.btnGo {
+    margin-top: 30px;
+    padding: 15px 25px;
+    border: 0;
+    border-radius: 15px;
+    color: #212121;
+    z-index: 1;
+    background: #e8e8e8;
+    position: relative;
+    font-weight: 1000;
+    font-size: 17px;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+    transition: all 250ms;
+    overflow: hidden;
+}
+
+.btnGo::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 0;
+    width: 0;
+    border-radius: 15px;
+    background-color: var(--color03);
+    z-index: -1;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+    transition: all 250ms;
+}
+
+.btnGo:hover {
+    color: #e8e8e8;
+}
+
+.btnGo:hover::before {
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 100%;
+}
+
+.btnGo:active {
+    transform: scale(80%);
+}

@@ -6,11 +6,9 @@
     --color05: #F2421B;
     --black01: #000000;
     --white01: #FFFFFF;
-
-    --font-destaque: "Lato", serif;
-    --font-titulo: "Poppins", serif;
-    --font-global: "Roboto", serif;
     
+    --font-global: "Roboto", serif;
+
 }
 
 *{
