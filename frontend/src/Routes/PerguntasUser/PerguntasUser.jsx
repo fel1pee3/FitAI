@@ -67,6 +67,9 @@ const PerguntasUser = () => {
         Back
       </Link>
       </div>
+      <p className={style.texto}>
+        Preencha as informações abaixo para que possamos criar uma dieta personalizada para você, considerando seus objetivos, rotina e necessidades individuais.
+      </p>
       <form onSubmit={handleSubmit} className={style.form}>
         <div className={style.caixaInput}>
           <label className={style.label} htmlFor="objetivo">Objetivo</label>

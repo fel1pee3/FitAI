@@ -4,6 +4,7 @@
     --color03: #e9a21e;
     --color04: #F28705;
     --color05: #F2421B;
+    --color06: #fbff64;
     --black01: #000000;
     --white01: #FFFFFF;
     
@@ -17,6 +18,25 @@
     box-sizing: border-box;
     font-family: var(--font-global);
     transition: all ease .4s;
+}
+
+html{
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+    width: 12px;          
+}
+
+body::-webkit-scrollbar-track {
+    background: var(--color06);       
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--color03);
+    border-radius: 10px;
+    border: 2px solid var(--color06);
 }
 
 a{
