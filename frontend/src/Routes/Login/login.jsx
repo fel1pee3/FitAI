@@ -4,6 +4,7 @@ import axios from 'axios'
 import { RxEyeOpen } from "react-icons/rx";
 import { LuEyeClosed } from "react-icons/lu";
 import style from "./Login.module.css"
+import Logo from "../../Components/Logo/Logo"
 
 const Login = () => {
 
@@ -39,6 +40,7 @@ const Login = () => {
 
     return (
         <div className={style.login}>
+            <Logo />
             <div className={style.loginContainer}>
                 <form onSubmit={handleSubmit} className={style.loginForm}>
                     <div className={style.caixaInput}>

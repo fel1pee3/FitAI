@@ -4,6 +4,7 @@ import axios from 'axios'
 import { RxEyeOpen } from "react-icons/rx";
 import { LuEyeClosed } from "react-icons/lu";
 import style from "./Register.module.css"
+import Logo from '../../Components/Logo/Logo';
 
 const Register = () => {
 
@@ -39,6 +40,7 @@ const Register = () => {
 
     return (
         <div className={style.register}>
+            <Logo />
             <div className={style.registerContainer}>
                 <form onSubmit={handleSubmit} className={style.registerForm}>
                     <div className={style.caixaInput}>

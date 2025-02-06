@@ -35,27 +35,45 @@ const PerguntasUser = () => {
 
   const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e) => { 
     e.preventDefault();
     try {
-      const token = localStorage.getItem('token');
-      const response = await axios.post(
-        'http://localhost:3000/quiz/quizResponses',
-        values,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`
-          }
-        }
-      );
+        const token = localStorage.getItem('token');
 
-      if (response.status === 201) {
-        navigate('/HomeStart');
-      }
+        const response = await axios.post(
+            'http://localhost:3000/quiz/quizResponses',
+            values,
+            {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            }
+        );
+
+        if (response.status === 201) {
+            console.log('Quiz responses saved successfully!');
+
+            const dietResponse = await axios.post(
+                'http://localhost:3000/gemini/generateDiet',
+                {},
+                {
+                    headers: {
+                        Authorization: `Bearer ${token}`
+                    }
+                }
+            );
+
+            if (dietResponse.status === 201) {
+                console.log('Diet generated successfully:', dietResponse.data.diet);
+                navigate('/HomeStart'); // Redirecionar após sucesso
+            }
+        }
     } catch (err) {
-      console.log(err);
+        console.log(err);
     }
   };
+
+  
 
   return (
     <div className={style.perguntas}>
