@@ -23,7 +23,7 @@ router.post('/generateDiet', verifyToken, async (req, res) => {
 
         const userData = rows[0];
 
-        const prompt = `Crie um plano de dieta personalizado com base nestes dados:
+        const prompt = `Crie um plano de dieta personalizado com base nestes dados e com as tags html para ficar mais organizado na hora de mostrar:
         Objetivo: ${userData.objetivo}
         Gênero: ${userData.genero}
         Idade: ${userData.idade}
@@ -60,5 +60,29 @@ router.post('/generateDiet', verifyToken, async (req, res) => {
         res.status(500).json({ error: 'Erro interno do servidor' });
     }
 });
+
+router.get('/userDiet', verifyToken, async (req, res) => {
+    try {
+        const { userId } = req;
+        const db = await connectToDatabase();
+
+        const [rows] = await db.query(
+            `SELECT * FROM diets WHERE user_id = ? ORDER BY id DESC LIMIT 1`,
+            [userId]
+        );
+
+        if (rows.length === 0) {
+            return res.status(404).json({ error: 'Nenhuma dieta encontrada para o usuário.' });
+        }
+
+        const diet = rows[0];
+
+        res.status(200).json({ message: 'Dieta recuperada com sucesso!', diet });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Erro interno do servidor' });
+    }
+});
+
 
 export default router;

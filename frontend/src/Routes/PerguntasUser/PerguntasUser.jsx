@@ -53,7 +53,6 @@ const PerguntasUser = () => {
       if (response.status === 201) {
         console.log('Quiz responses saved successfully!');
         
-        // Salva no localStorage que as respostas já foram preenchidas
         localStorage.setItem('quizCompleted', 'true');
   
         const dietResponse = await axios.post(

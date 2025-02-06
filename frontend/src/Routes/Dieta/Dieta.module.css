@@ -1,0 +1,35 @@
+.dieta{
+    padding: 20px 40px;
+    background-color: var(--color06);
+}
+
+.container{
+    background-color: var(--white01);
+    padding: 20px;
+    border-radius: 10px;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+}
+
+/* Estilos para o título */
+.title {
+    color: #2d2d2d;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Estilos para o conteúdo da dieta */
+.dietCriada {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.dietCriada h1 {
+    color: #f25c54; /* Altere as cores conforme necessário */
+    font-size: 28px;
+}
+
+.dietCriada p {
+    margin: 10px 0;
+    font-size: 16px;
+}
