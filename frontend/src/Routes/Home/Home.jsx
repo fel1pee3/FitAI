@@ -30,8 +30,16 @@ const Home = () => {
     };
 
     useEffect(() => {
-        fetchUser();
-    }, []);
+        const token = localStorage.getItem('token');
+        const quizCompleted = localStorage.getItem('quizCompleted'); // Verifica se o quiz foi respondido
+        
+        if (quizCompleted === 'true') {
+          navigate('/HomeStart');
+        } else {
+          fetchUser();
+        }
+    }, [navigate]);
+      
 
   return (
     <div className={style.home}>    

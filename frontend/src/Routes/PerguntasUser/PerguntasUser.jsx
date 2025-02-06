@@ -38,43 +38,43 @@ const PerguntasUser = () => {
   const handleSubmit = async (e) => { 
     e.preventDefault();
     try {
-        const token = localStorage.getItem('token');
-
-        const response = await axios.post(
-            'http://localhost:3000/quiz/quizResponses',
-            values,
-            {
-                headers: {
-                    Authorization: `Bearer ${token}`
-                }
-            }
-        );
-
-        if (response.status === 201) {
-            console.log('Quiz responses saved successfully!');
-
-            const dietResponse = await axios.post(
-                'http://localhost:3000/gemini/generateDiet',
-                {},
-                {
-                    headers: {
-                        Authorization: `Bearer ${token}`
-                    }
-                }
-            );
-
-            if (dietResponse.status === 201) {
-                console.log('Diet generated successfully:', dietResponse.data.diet);
-                navigate('/HomeStart'); // Redirecionar após sucesso
-            }
+      const token = localStorage.getItem('token');
+  
+      const response = await axios.post(
+        'http://localhost:3000/quiz/quizResponses',
+        values,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
         }
+      );
+  
+      if (response.status === 201) {
+        console.log('Quiz responses saved successfully!');
+        
+        // Salva no localStorage que as respostas já foram preenchidas
+        localStorage.setItem('quizCompleted', 'true');
+  
+        const dietResponse = await axios.post(
+          'http://localhost:3000/gemini/generateDiet',
+          {},
+          {
+            headers: {
+              Authorization: `Bearer ${token}`
+            }
+          }
+        );
+  
+        if (dietResponse.status === 201) {
+          navigate('/HomeStart');
+        }
+      }
     } catch (err) {
-        console.log(err);
+      console.log(err);
     }
   };
-
   
-
   return (
     <div className={style.perguntas}>
       <div className={style.caixaBtnBack}>
