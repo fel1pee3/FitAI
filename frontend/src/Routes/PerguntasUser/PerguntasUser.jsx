@@ -39,7 +39,6 @@ const PerguntasUser = () => {
     e.preventDefault();
     try {
       const token = localStorage.getItem('token');
-  
       const response = await axios.post(
         'http://localhost:3000/quiz/quizResponses',
         values,
@@ -52,8 +51,16 @@ const PerguntasUser = () => {
   
       if (response.status === 201) {
         console.log('Quiz responses saved successfully!');
-        
-        localStorage.setItem('quizCompleted', 'true');
+
+        await axios.put(
+          'http://localhost:3000/quiz/markAsCompleted',
+          {},
+          {
+            headers: {
+              Authorization: `Bearer ${token}`
+            }
+          }
+        );
   
         const dietResponse = await axios.post(
           'http://localhost:3000/gemini/generateDiet',
@@ -74,10 +81,11 @@ const PerguntasUser = () => {
     }
   };
   
+  
   return (
     <div className={style.perguntas}>
       <div className={style.caixaBtnBack}>
-      <Link to="/" className={style.cssButtonsIoButton}>
+      <Link to="/homeStart" className={style.cssButtonsIoButton}>
         <div className={style.icon}>
           <FaArrowLeft className={style.arrow} />
         </div>
@@ -91,7 +99,6 @@ const PerguntasUser = () => {
         <div className={style.caixaInput}>
           <label className={style.label} htmlFor="objetivo">Objetivo</label>
           <select className={style.select} name="objetivo" onChange={handleChanges}>
-            <option value="" disabled>Selecione...</option>
             <option value="Emagrecer">Emagrecer</option>
             <option value="Ganhar massa muscular">Ganhar massa muscular</option>
             <option value="Melhorar a saúde">Melhorar a saúde</option>
@@ -102,7 +109,6 @@ const PerguntasUser = () => {
         <div className={style.caixaInput}>
           <label className={style.label} htmlFor="genero">Gênero</label>
           <select className={style.select} name="genero" onChange={handleChanges}>
-            <option value="" disabled>Selecione...</option>
             <option value="Masculino">Masculino</option>
             <option value="Feminino">Feminino</option>
           </select>
@@ -154,7 +160,6 @@ const PerguntasUser = () => {
         <div className={style.caixaInput}>
           <label className={style.label} htmlFor="nivel_atividade">Nível de Atividade</label>
           <select className={style.select} name="nivel_atividade" onChange={handleChanges}>
-            <option value="" disabled>Selecione...</option>
             <option value="Sedentário">Sedentário</option>
             <option value="Leve">Leve</option>
             <option value="Moderado">Moderado</option>
@@ -196,7 +201,6 @@ const PerguntasUser = () => {
         <div className={style.caixaInput}>
           <label className={style.label} htmlFor="rotina">Rotina</label>
           <select className={style.select} name="rotina" onChange={handleChanges}>
-            <option value="" disabled>Selecione...</option>
             <option value="Pouco movimentada">Pouco movimentada</option>
             <option value="Moderadamente ativa">Moderadamente ativa</option>
             <option value="Muito ativa">Muito ativa</option>
@@ -236,7 +240,6 @@ const PerguntasUser = () => {
         <div className={style.caixaInput}>
           <label className={style.label} htmlFor="prefere_refeicoes">Prefere Refeições</label>
           <select className={style.select} name="prefere_refeicoes" onChange={handleChanges}>
-            <option value="" disabled>Selecione...</option>
             <option value="Simples e rápidas">Simples e rápidas</option>
             <option value="Elaboradas">Elaboradas</option>
             <option value="Prontas">Prontas</option>
@@ -277,7 +280,6 @@ const PerguntasUser = () => {
         <div className={style.caixaInput}>
           <label className={style.label} htmlFor="tipo_desafio">Tipo de Desafio</label>
           <select className={style.select} name="tipo_desafio" onChange={handleChanges}>
-            <option value="" disabled>Selecione...</option>
             <option value="Falta de tempo">Falta de tempo</option>
             <option value="Não saber o que comer">Não saber o que comer</option>
             <option value="Preferência por alimentos menos saudáveis">Preferência por alimentos menos saudáveis</option>
@@ -295,7 +297,6 @@ const PerguntasUser = () => {
             <option value="12 meses">12 meses</option>
           </select>
         </div>
-
 
         <div className={style.caixaBtnPerguntas}>
           <button type="submit" className={style.btnGo}>Salvar</button>

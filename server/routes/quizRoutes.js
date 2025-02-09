@@ -21,5 +21,40 @@ router.post('/quizResponses', verifyToken, async (req, res) => {
     }
 });
 
+router.put('/markAsCompleted', verifyToken, async (req, res) => {
+    try {
+        const userId = req.userId;
+        const db = await connectToDatabase();
+      await db.query(
+        'UPDATE quiz_responses SET respondido = TRUE WHERE user_id = ?',
+        [userId]
+      );
+  
+        
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Erro ao atualizar status do quiz.' });
+    }
+});
+
+router.get('/checkResponse', verifyToken, async (req, res) => {
+    try {
+        const userId = req.userId;
+        const db = await connectToDatabase();
+        const [result] = await db.query(
+        'SELECT respondido FROM quiz_responses WHERE user_id = ? LIMIT 1',
+        [userId]
+        );
+
+        if (result.length > 0 && result[0].respondido === 1) {
+        return res.json({ responded: true });
+        } else {
+        return res.json({ responded: false });
+        }
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: 'Erro ao verificar status do quiz.' });
+    }
+});    
 
 export default router;
