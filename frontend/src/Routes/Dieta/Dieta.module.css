@@ -14,6 +14,11 @@
     box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
 }
 
+.caixaBtns{
+    display: flex;
+    justify-content: space-between;
+}
+
 .cssButtonsIoButton {
     width: max-content;
     background: var(--color03);
@@ -68,6 +73,44 @@
 
 .cssButtonsIoButton:active .icon {
     transform: scale(0.95);
+}
+
+/* From Uiverse.io by kamehame-ha */ 
+.downloadPDF {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 15px;
+    gap: 5px;
+    background-color: rgb(255, 16, 16);
+    outline: 3px rgb(255, 16, 16) solid;
+    outline-offset: -3px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.downloadPDF .text {
+    color: white;
+    font-weight: 700;
+    font-size: 1em;
+}
+
+.downloadPDF .iconPDF {
+    color: #fff;
+    font-size: 1.6em;
+}
+
+.downloadPDF:hover {
+    background-color: transparent;
+}
+
+.downloadPDF:hover .text {
+    color: #181717;
+}
+
+.downloadPDF:hover .iconPDF {
+    fill: rgb(255, 16, 16);
 }
 
 /* Estilos para o conteúdo da dieta */
