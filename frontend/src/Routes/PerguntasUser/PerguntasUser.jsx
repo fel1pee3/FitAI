@@ -50,7 +50,6 @@ const PerguntasUser = () => {
       );
   
       if (response.status === 201) {
-        console.log('Quiz responses saved successfully!');
 
         await axios.put(
           'http://localhost:3000/quiz/markAsCompleted',
