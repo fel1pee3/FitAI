@@ -30,24 +30,21 @@ const Dieta = () => {
     }, []);
 
     const downloadPDF = () => {
-        const doc = new jsPDF(); // Cria uma instância do jsPDF
+        const doc = new jsPDF();
 
-        const dietContent = DOMPurify.sanitize(diet.diet_plan); // Sanitiza o conteúdo
+        const dietContent = DOMPurify.sanitize(diet.diet_plan);
 
-        // Definir o tamanho da fonte para controlar o layout
-        doc.setFontSize(12); // Tamanho da fonte ajustado
+        doc.setFontSize(12);
 
-        // Adiciona o conteúdo HTML ao PDF
         doc.html(dietContent, {
             callback: function (doc) {
-                // Salva o PDF
                 doc.save('dieta.pdf');
             },
-            margin: [10, 10], // Define margens para ajustar o conteúdo na página
+            margin: [10, 10], 
             x: 10,
             y: 10,
-            width: 180, // Largura ajustada para caber melhor na página
-            windowWidth: 800, // Ajusta a largura da janela para o conteúdo ser renderizado corretamente
+            width: 180,
+            windowWidth: 800,
         });
     };
 

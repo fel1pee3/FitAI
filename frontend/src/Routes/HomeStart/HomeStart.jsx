@@ -4,6 +4,7 @@ import style from './HomeStart.module.css'
 import MsgBemVindo from '../../Components/MsgBemVindo/MsgBemVindo'
 import Logo from '../../Components/Logo/Logo'
 import imgReceitas from '../../../images/img-receitas.jpg'
+import IdeiasReceita from '../ideiasReceita/ideiasReceita'
 
 const HomeStart = () => {
   return (
@@ -21,6 +22,7 @@ const HomeStart = () => {
               <span>Receitas</span>
           </Link>
         </div>
+        <IdeiasReceita/>
       </div>
     </div>
   )

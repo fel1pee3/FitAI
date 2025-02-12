@@ -67,10 +67,6 @@
     color: var(--color03);
 }
 
-.cssButtonsIoButton:hover .icon svg {
-    transform: translateX(-0.1em); /* Ajustado para mover para a esquerda */
-}
-
 .cssButtonsIoButton:active .icon {
     transform: scale(0.95);
 }

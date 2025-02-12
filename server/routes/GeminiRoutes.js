@@ -84,5 +84,4 @@ router.get('/userDiet', verifyToken, async (req, res) => {
     }
 });
 
-
 export default router;

@@ -1,41 +1,10 @@
-.receitasApi{
-    background-color: var(--color06);
+.receita{
+    width: 100vw;
     padding: 20px 40px;
+    background-color: var(--color06);
     display: flex;
     flex-direction: column;
-    gap: 10px;
-}
-
-.grid{
-    width: 100%;
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 2fr));
     gap: 20px;
-    transition: all ease .4s;
-}
-
-.card{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    justify-content: center;
-    background-color: var(--color03);
-    padding: 10px;
-    border-radius: 10px;
-    -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
-    box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
-    color: var(--black01);
-}
-
-.card:hover{
-    transform: scale(1.05);
-}
-
-.image{
-    border-radius: 10px;
 }
 
 .cssButtonsIoButton {
@@ -86,10 +55,65 @@
     color: var(--color03);
 }
 
-.cssButtonsIoButton:hover .icon svg {
-    transform: translateX(-0.1em); /* Ajustado para mover para a esquerda */
-}
-
 .cssButtonsIoButton:active .icon {
     transform: scale(0.95);
+}
+
+.title{
+    margin: 0;
+    font-size: 2em;
+}
+
+.imgReceita{
+    width: 500px;
+    border-radius: 10px;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+}
+
+.receitaPreparo{
+    display: flex;
+    gap: 10px;
+}
+
+.ingrediensReceita, .instructionsReceita{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.links{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.links a{
+    display: flex;
+    gap: 5px;
+    color: var(--black01);
+}
+
+.links a:hover{
+    color: var(--color01);
+}
+
+.linkY{
+    color: red;
+}
+
+.linkS{
+    color: var(--color03);
+}
+
+@media (max-width: 750px) {
+    .imgReceita{
+        width: 100%;
+    }
+    .receitaPreparo{
+        flex-wrap: wrap;
+    }
+    .ingrediensReceita, .instructionsReceita{
+        width: 100%;
+    }
 }

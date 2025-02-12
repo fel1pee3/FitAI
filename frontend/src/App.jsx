@@ -8,6 +8,7 @@ import PerguntasUser from './Routes/PerguntasUser/PerguntasUser';
 import HomeStart from './Routes/HomeStart/HomeStart';
 import Dieta from './Routes/Dieta/Dieta';
 import ReceitasApi from './Routes/ReceitasApi/ReceitasApi';
+import Receita from './Routes/Receita/Receita';
 import "./App.css"
 
 const App = () => {
@@ -20,7 +21,7 @@ const App = () => {
         <Route path='/perguntasUser' element={<PerguntasUser />}></Route>
         <Route path='/homeStart' element={<HomeStart />}></Route>
         <Route path='/dieta' element={<Dieta />}></Route>
-        <Route path='HomeStart/receitasApi' element={<ReceitasApi />}></Route>
+        <Route path='/HomeStart/receitasApi' element={<ReceitasApi />}></Route>        <Route path='/receita/:id' element={<Receita />}></Route>
       </Routes>
     </BrowserRouter>
   )
