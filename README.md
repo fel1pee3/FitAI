@@ -7,7 +7,7 @@ individuais dos usuários.
 🚧 Projeto Finalizado (possiveis mudanças no futuro) 🚧
 
 ## Pré-visualização
-Confira uma prévia do Conecta:
+Confira uma prévia do FitAI:
 
 ![Imagem da Aplicação](frontend/images/tela01.png)
 ![Imagem da Aplicação](frontend/images/tela02.png)
