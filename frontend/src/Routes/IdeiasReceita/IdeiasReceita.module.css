@@ -1,11 +1,38 @@
 .grid{
     width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .card{
+    display: flex;
+    gap: 10px;
+    background-color: #e8e8e8;
+    padding: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+}
 
+.card:hover{
+    transform: scale(1.03);
 }
 
 .image{
-    
+    width: 100px;
+    border-radius: 10px;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+}
+
+.receita{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    color: var(--black01);
+}
+
+.receita h3{
+
 }

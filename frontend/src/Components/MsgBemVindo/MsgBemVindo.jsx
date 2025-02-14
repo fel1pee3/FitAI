@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios';
+import logo from '../../../images/logo-FitAi-semfundo.png'
 import style from './MsgBemVindo.module.css'
 
 const MsgBemVindo = () => {

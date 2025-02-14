@@ -27,10 +27,12 @@ const IdeiasReceita = () => {
             {recipes.map((meal) => (
             <Link to={`/receita/${meal.idMeal}`} key={meal.idMeal} className={style.card}>
                 <img src={meal.strMealThumb} alt={meal.strMeal} className={style.image} />
-                <h3 className={style.mealTitle}>{meal.strMeal}</h3>
-                <p className={style.description}>
-                {meal.strInstructions.slice(0, 100)}...
-                </p>
+                <div className={style.receita}>
+                  <h3 className={style.mealTitle}>{meal.strMeal}</h3>
+                  <p className={style.description}>
+                  {meal.strInstructions.slice(0, 100)}...
+                  </p>
+                </div>
             </Link>
             ))}
         </div>
