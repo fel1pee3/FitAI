@@ -4,21 +4,31 @@ O FitAI é uma aplicação de saúde e fitness que utiliza inteligência artific
 individuais dos usuários.
 
 ## Status
-🚧 Projeto em criação 🚧
+🚧 Projeto Finalizado (possiveis mudanças no futuro) 🚧
 
 ## Pré-visualização
 Confira uma prévia do Conecta:
 
-![Imagem da Aplicação](frontend/images/tela1.png)
+![Imagem da Aplicação](frontend/images/tela01.png)
+![Imagem da Aplicação](frontend/images/tela02.png)
+![Imagem da Aplicação](frontend/images/tela03.png)
+![Imagem da Aplicação](frontend/images/tela04.png)
+![Imagem da Aplicação](frontend/images/tela05.png)
+![Imagem da Aplicação](frontend/images/tela06.png)
+![Imagem da Aplicação](frontend/images/tela07.png)
+![Imagem da Aplicação](frontend/images/tela09.png)
+![Imagem da Aplicação](frontend/images/tela10.png)
+![Imagem da Aplicação](frontend/images/tela11.png)
 
 ---
 
 ## Funcionalidades
-- ✅ Funcionalidade 01
-- ✅ Funcionalidade 02
-- ✅ Funcionalidade 03
-- ✅ Funcionalidade 04
-- ✅ Funcionalidade 05
+- ✅ Cadastro e Autenticação de Usuários
+- ✅ Questionário para Personalização da Dieta
+- ✅ Geração Automática de Dietas
+- ✅ Exportação da dieta para PDF.
+- ✅ Recomendações de receitas baseadas nas preferências do usuário.
+- ✅ API de receitas
 
 ---
 
@@ -27,7 +37,7 @@ Confira uma prévia do Conecta:
 ### Pré-requisitos
 Certifique-se de ter instalado:
 - **Node.js** (v16 ou superior)
-- **PostgreSQL**
+- **MySQL**
 - **Git**
 
 ### Criação do Banco de Dados
@@ -38,22 +48,60 @@ Cria o BD do projeto.
 CREATE DATABASE NOME_AQUI;
 ```
 
-#### Tabela `tabela 01`
-Texto: Qual a função dessa tabela
+#### Tabela `users`
+Guarda informações sobre os usuários.
 ```bash
-  TABELA 01
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(199) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    password VARCHAR(255) NOT NULL UNIQUE,
+    profile_image VARCHAR(255),
+    position VARCHAR(255),
+    leader_code VARCHAR(255),
+    leader_id INT
+);
 ```
 
-#### Tabela `tabela 02`
-Texto: Qual a função dessa tabela
+#### Tabela `quiz_responses`
+Armazena os dados do usuário para criar a dieta personalizada
 ```bash
-  TABELA 02
+  CREATE TABLE quiz_responses (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    objetivo VARCHAR(255) NOT NULL,
+    genero VARCHAR(10) NOT NULL,
+    idade INT NOT NULL,
+    altura DECIMAL(5,2) NOT NULL,
+    peso_atual DECIMAL(5,2) NOT NULL,
+    peso_ideal DECIMAL(5,2) NOT NULL,
+    nivel_atividade VARCHAR(150) NOT NULL,
+    tipo_atividade VARCHAR(200) NOT NULL,
+    horario_acordar TIME NOT NULL,
+    horario_dormir TIME NOT NULL,
+    rotina VARCHAR(150) NOT NULL,
+    dieta_especifica VARCHAR(255) NOT NULL,
+    alimentos_restritos TEXT NOT NULL,
+    alimentos_preferidos TEXT NOT NULL,
+    prefere_refeicoes VARCHAR(150) NOT NULL,
+    problema_saude TEXT NOT NULL,
+    suplementos TEXT NOT NULL,
+    numero_refeicoes INT NOT NULL,
+    tipo_desafio VARCHAR(200) NOT NULL,
+    tempo_meta VARCHAR(100) NOT NULL,
+    respondido TINYINT(1) NOT NULL DEFAULT 0
+);
 ```
 
-#### Tabela `tabela03`
-Texto: Qual a função dessa tabela
+#### Tabela `diets`
+Armazena a dieta criada pelo gemini
 ```bash
-  TABELA 03
+  CREATE TABLE diets (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    diet_plan TEXT NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);
 ```
 
 ### Instalação
@@ -78,6 +126,7 @@ Texto: Qual a função dessa tabela
     DB_DATABASE="conecta"
     PORT=3000
     JWT_KEY="SUA-CHAVE-JWT"
+    GOOGLE_API_KEY="CHAVE-GEMINI"
     ```
 
 4. Inicie o backend:
